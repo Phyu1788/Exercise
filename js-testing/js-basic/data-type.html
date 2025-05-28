@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data type Example</title>
+</head>
+<body>
+    <h1>
+        Javascript type : String Number True Null Undefined {name:"Alice"}
+    </h1>
+    <script>
+        let name = "Aice";
+        let greeting = "Helo, World!";
+
+        let age = 30;
+        let price = 19.99;
+
+        let isLoggedIn= true;
+        let isAdminIn = false;
+
+        let score;
+        console.log(score);
+
+        let selectedUser = null;
+
+        let user = {
+            name:"Alice",
+            age:25,
+            isMember: true,
+        };
+
+        console.log(typeof name);
+        console.log(typeof age);
+        console.log(typeof isLoggeIn);
+        console.log(typeof score);
+        console.log(typeof selectedUser);
+        console.log(typeof user);
+        
+        let number = [1,2.3];
+        let fruit = ["apple","banana", "cherry"];
+        let mixed =[42, "hello",null, undefined, true,{name : "alice"}];
+        let matrix =[
+            [1,3],
+            [2,4],
+    ];
+
+    console.log(fruit[0]);
+    console.log(mixed[5].name);
+
+    fruit.push("orange");
+    fruit.pop();
+    fruit.unshift("grape");
+    fruit.shift();
+
+    console.log(fruit.length);
+    console.log(Array.isArray(fruit));
+    console.log(typeof fruit);
+    </script>
+   
+</body>
+</html>

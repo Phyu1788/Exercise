@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>var-let-const Basic Example</title>
+</head>
+    <h1>javascript var-let-const Basic Example</h1>
+    <script>
+        var name = "Alice";
+        console.log(name);
+
+         var name = "Bob";
+        console.log(name);
+
+        let age =25;
+        console.log(age);
+
+        //let age = 30;error
+        age =30;
+        console.log(age);
+
+        const country = "USA";
+        console.log(country);
+
+       function testVarLetConst(){
+            if(true){
+                var a = 10;
+                let b = 20;
+                const c = 30;
+                console.log(b);
+            }
+            console.log(a);
+           // console.log(b);
+            //console.log(c);
+        } 
+        testVarLetConst();
+    </script>
+</body>
+</html>
