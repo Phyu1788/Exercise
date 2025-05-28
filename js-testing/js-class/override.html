@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Class's override Examplet</title>
+</head>
+<body>
+    <body>
+    <h1>JS Class's override Example</h1>
+    <script>
+      class Animal {
+        speak() {
+          console.log("Animal speaks");
+        }
+      }
+
+      class Dog extends Animal {
+        //override 
+        speak() {
+          console.log("Dog barks");
+        }
+      }
+
+      const d = new Dog();
+      d.speak(); // Dog barks
+    </script>
+</body>
+</body>
+</html>
