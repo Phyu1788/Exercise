@@ -1,5 +1,6 @@
 "use client";
 
+import { redirect } from "next/dist/server/api-utils";
 import React from "react";
 
 export default class UserProfile extends React.Component {
@@ -13,7 +14,7 @@ export default class UserProfile extends React.Component {
     }
     render() {
         return(
-            <div style={{ border: "1px solid #ccc",padding: "20px",width: "300px"}}>
+            <div style={{ border: "1px solid #ccc",padding: "20px", width: "300px",color:"blue", backgroundColor:"white"}}>
                 <h1>User Profile</h1>
                 <div>{this.state.username}</div>
                 <div>{this.state.email}</div>
