@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function Person() {
     const [name, setName] = useState("Phyu");
-    const [date, srtDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
     return (
         <div>
             <h1>State in function Component</h1>
