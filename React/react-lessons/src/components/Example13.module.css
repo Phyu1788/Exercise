@@ -1,0 +1,16 @@
+.header {
+    color: brown;
+}
+
+.name {
+    color: blueviolet;
+    padding: 10;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.userInput {
+    height: 80px;
+    border: "1px solid white";
+    border-radius: 5px;
+}

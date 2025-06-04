@@ -14,7 +14,7 @@ export default class UserProfile extends React.Component {
     }
     render() {
         return(
-            <div style={{ border: "1px solid #ccc",padding: "20px", width: "300px",color:"blue", backgroundColor:"white"}}>
+            <div style={{ border: "1px solid #ccc",padding: 20, width: "300px",color:"blue", backgroundColor:"white"}}>
                 <h1>User Profile</h1>
                 <div>{this.state.username}</div>
                 <div>{this.state.email}</div>
