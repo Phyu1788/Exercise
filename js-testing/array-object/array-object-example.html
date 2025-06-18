@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Array Object</h1>
-</body>
-<script>
-        let fruits =  ["apple", "mango", "banana"]      
-        fruits.push("Orange");
-        fruits.pop();
-        fruits.unshift("grape");
-        fruits.shift();
-        fruits.includes("Banana");
-        fruits.splice(1,1);
-        console.log(fruits)
-        const joinedResult = fruits.join(", ");
-        console.log('joined result:' , joinedResult);
+  </body>
+  <script>
+    let fruits = ["apple", "mango", "banana"];
+    fruits.push("Orange");
+    fruits.pop();
+    fruits.unshift("grape");
+    fruits.shift();
+    fruits.includes("Banana");
+    fruits.splice(1, 1);
+    console.log(fruits);
+    const joinedResult = fruits.join(", ");
+    console.log("joined result:", joinedResult);
 
-        for(let i = 0;i < fruits.length; i++){
-            console.log(fruits[i]);
-        }
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
 
-        for (let fruit of fruits){
-            console.log(fruit);
-        }
+    for (let fruit of fruits) {
+      console.log(fruit);
+    }
 
-        fruits.forEach(function (fruit){
-            console.log(fruit);
-        });
-
-        let persorn ={
-            name : "Alice",
-            age : 12,
-            greet: function(){
-                console.log("Hello, my name is:", + this.name);
-            },
-        };
-
-        let users = [
-            { name:"Alice", age : 12},
-            { name:"Bob", age : 22},
-            { name:"Charlie", age : 25},
-    ];
-
-    users.forEach((user)=> {
-        console.log(users.name + "is" + user.age + "is")
+    fruits.forEach(function (fruit) {
+      console.log(fruit);
     });
 
-    let colors = ["red" , "green" , "blue"];
-    let[first,second] = colors;
+    let persorn = {
+      name: "Alice",
+      age: 12,
+      greet: function () {
+        console.log("Hello, my name is:", +this.name);
+      },
+    };
+
+    let users = [
+      { name: "Alice", age: 12 },
+      { name: "Bob", age: 22 },
+      { name: "Charlie", age: 25 },
+    ];
+
+    users.forEach((user) => {
+      console.log(users.name + "is" + user.age + "is");
+    });
+
+    let colors = ["red", "green", "blue"];
+    let [first, second] = colors;
 
     console.log(first);
     console.log(second);
 
     let car = {
-        brand : "Toyota",
-        model : "Corolla",
-        year : 2022,
+      brand: "Toyota",
+      model: "Corolla",
+      year: 2022,
     };
 
-    let {brand,model} = car;
+    let { brand, model } = car;
 
     console.log(brand);
     console.log(model);
-</script>
+  </script>
 </html>
