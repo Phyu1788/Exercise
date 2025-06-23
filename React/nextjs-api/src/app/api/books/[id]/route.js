@@ -1,20 +1,17 @@
 import { NextResponse } from "next/server";
 import * as yup from "yup";
 
-//Validation 
 const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  fatherName: yup.string().required("Father Name is required"),
-  address: yup.string().required("Address is required"),
-  age: yup.number().required("Age is required"),
-  major: yup.string().required("Major is required"),
+  title: yup.string().required("Title is required"),
+  author: yup.string().required("Author is required"),
+  public_year: yup.string().required("Pubilsh_year is required"),
 });
-//Update student Detail
+
 export async function PUT(req, { params }) {
   try {
     const studentId = params.id; //get URI parama field;
     const body = await req.json();
-    await schema.validate(body, { abortEarly: false });// Cll Validation
+    await schema.validate(body, { abortEarly: false }); // Call Validation
 
     return NextResponse.json({
       message: "Student is successfully created!",
@@ -45,25 +42,21 @@ export async function PUT(req, { params }) {
   }
 }
 
-//Delete student Detail
 export async function DELETE(req, { params }) {
-  const studentId = params.id;
+  const bookId = params.id;
   return NextResponse.json({
-    message: "Student is successfully deleted!",
-    studentId,
+    message: "Book is successfully deleted!",
+    bookId,
   });
 }
 
 export async function GET(req, { params }) {
-  const studentId = params.id;
-  const student = {
-    id: studentId,
-    name: "Phyu",
-    age: 23,
-    gender: "female",
-    fatherName: "U Yarzar",
-    address: "Mawlamyine",
-    major: "Computer Science",
+  const bookId = params.id;
+  const book = {
+    id: bookId,
+    title: "Myanmar",
+    author: "Kelvin",
+    public_year: 2001,
   };
-  return NextResponse.json(student);
+  return NextResponse.json(book);
 }
