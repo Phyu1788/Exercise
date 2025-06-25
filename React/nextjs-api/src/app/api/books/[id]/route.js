@@ -1,21 +1,28 @@
+import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
   author: yup.string().required("Author is required"),
-  public_year: yup.string().required("Pubilsh_year is required"),
+  published_year: yup.number().required("Pubilshed_year is required"),
 });
 
 export async function PUT(req, { params }) {
   try {
-    const studentId = params.id; //get URI parama field;
+    const bookId = parseInt(params.id);
     const body = await req.json();
-    await schema.validate(body, { abortEarly: false }); // Call Validation
-
+    const validateData = await schema.validate(body, {
+      abortEarly: false,
+      stripUnknown: true,
+    });
+    await prisma.book.update({
+      where: { id: bookId },
+      data: validateData,
+    });
     return NextResponse.json({
-      message: "Student is successfully created!",
-      studentId,
+      message: "Book is successfully created!",
+      bookId,
       bodyData: body,
     });
   } catch (error) {
@@ -42,21 +49,36 @@ export async function PUT(req, { params }) {
   }
 }
 
-export async function DELETE(req, { params }) {
-  const bookId = params.id;
-  return NextResponse.json({
-    message: "Book is successfully deleted!",
-    bookId,
-  });
-}
+// export async function DELETE(req, { params }) {
+//   try {
+//     const bookId = parseInt(params.id);
+//     await prisma.book.delete({
+//       where: { id: bookId },
+//     });
+//     return NextResponse.json({
+//       message: "Book is successfully deleted!",
+//       bookId,
+//     });
+//   } catch (error) {
+//     return NextResponse.json(
+//       {
+//         meaasge: "Book not found",
+//       },
+//       {
+//         status: 404,
+//       }
+//     );
+//   }
+// }
 
-export async function GET(req, { params }) {
-  const bookId = params.id;
-  const book = {
-    id: bookId,
-    title: "Myanmar",
-    author: "Kelvin",
-    public_year: 2001,
-  };
-  return NextResponse.json(book);
-}
+// export async function GET(req, { params }) {
+//   const bookId = parseInt(params.id); //get uri parama field
+
+//   //Find student in database
+//   const book = await prisma.book.findUnique({
+//     where: {
+//       id: bookId,
+//     },
+//   });
+//   return NextResponse.json(book);
+// }
